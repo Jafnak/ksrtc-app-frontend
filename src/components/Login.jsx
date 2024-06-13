@@ -45,9 +45,12 @@ const readValue=()=>{
         </div>
         <div>
             <Link class="nav-link" to="/signup">SignUp</Link>
-            <Link class="nav-link" to="/busadd">Addbus</Link>
+            
+          
             
             </div>
+            <div><Link class="nav-link" to="/busadd">Addbus</Link></div>
+            <div>    <Link class="nav-link" to="/viewbus">viewbus</Link></div>
         
     </div>
 </div>
