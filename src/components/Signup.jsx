@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Signup = () => {
 const [data,setData] = useState(
@@ -27,7 +27,9 @@ const readValue=()=>{
         (response)=>{
             console.log(response.data)
             if (response.data.status == "success") {
-                alert("Successfully added")
+                sessionStorage.setItem("token",response.data.token)
+                sessionStorage.setItem("userid",response.data.userid)
+                navigate("/busadd")
             } else {
                 alert("error")
             }
@@ -41,6 +43,7 @@ const readValue=()=>{
     }
 }
 
+let navigate=useNavigate()
   return (
     <div>
 <div className="container">
@@ -74,7 +77,7 @@ const readValue=()=>{
                 <button className="btn btn-secondary" onClick={readValue}>SignUp</button>
             </div>
             <div>
-            <Link class="nav-link" to="/">Login</Link>
+            <Link class="nav-link" to="/"><b>Login</b></Link>
             
             </div>
            
