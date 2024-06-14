@@ -27,11 +27,12 @@ const readValue=()=>{
         (response)=>{
             console.log(response.data)
             if (response.data.status == "success") {
+                alert("Successfully registered")
                 sessionStorage.setItem("token",response.data.token)
                 sessionStorage.setItem("userid",response.data.userid)
-                navigate("/busadd")
+                navigate("/login")
             } else {
-                alert("error")
+                alert("Can't be registered")
             }
         }
     ).catch(
